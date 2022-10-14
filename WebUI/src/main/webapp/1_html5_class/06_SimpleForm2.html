@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_SimpleForm.html</title>
+</head>
+<body>
+
+<form>
+
+<!-- method='post' 안보이게 하려면 form 안에 추가 -->  
+
+
+<fieldset> 
+   <legend> 로그인 정보</legend>
+   <ol> 
+       <li>
+          <label for='id'>아이디</label>
+          <input type='id'  id='name' name='id'>       
+       </li>
+       
+      <li>
+          <label for='password'>비밀번호</label>
+          <input type='password'  name='password'>       
+       </li>
+       
+       <li>
+          <label for='ckpassword'>비밀번호 확인</label>
+          <input type='ckpassword'  name='ckpassword'>       
+       </li>
+       
+       <li>
+          <label for='ji'>회원 등급</label>
+          <input type='text'  name='ji' value= '준회원'>       
+       </li>
+       
+       
+</fieldset>
+
+</form>
+
+
+<form>
+
+<!-- 구분 -->  
+
+
+<fieldset> 
+   <legend> 개인 정보</legend>
+   <ol> 
+       <li>
+          <label for='name'>이름</label>
+          <input type='text'  id='name' name='name' placeholder="5자미만 공백없이">
+                
+       </li>
+       
+      <li>
+          <label for='email'>메일 주소</label>
+          <input type='email'  name='email' placeholder="abcd@domain.com">       
+       </li>
+       
+       <li>
+          <label for='tel'>연락처</label>
+          <input type='tel'  name='tel'>       
+       </li>
+       
+       <li>
+          <label for='birth'>생일 </label>
+         <input type="date" min="2011-11-01" max="2021-12-31" step="1" value="2018-11-11"/>
+       </li>
+       
+       
+</fieldset>
+
+</form>
+
+
+<form>
+
+<!-- 구분 -->  
+
+
+<fieldset> 
+   <legend> 코딩 숙련도(상,중,하)</legend>
+   <ol> 
+       <li>
+        
+          <input type="range" min="0" max="100" step="1" value="50">
+       </li>
+       
+     
+</fieldset>
+
+<!-- 구분 --> 
+
+<fieldset> 
+
+  
+      <input type='submit' value='제출'>
+      
+</fieldset>
+
+</form>
+
+
+</body>
+</html>
