@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> String 객체 </title>
+<script type="text/javascript">		
+	var str = '너의 삶 속에 나의 삶을 넣어 삶을 영위하자';
+	document.writeln( str.indexOf('삶') + '<br/>');   //3 0부터시작
+	document.writeln( str.lastIndexOf('삶')+ '<br/>'); //17 왼쪽부터
+	document.writeln( str.indexOf('삶을') + '<br/>'); //11 
+	document.writeln( str.length + '<br/>'); //24 0~23 까지니까 주의하기
+	
+	document.writeln( str.startsWith('삶') + '<br/>'); //false 삶으로 시작하냐
+	document.writeln( str.endsWith('삶') + '<br/>'); //false 삶으로 끝나냐
+	document.writeln( str.includes('삶') + '<hr/>');  // true 삶 포함 되어잇냐
+
+	
+	var msg = '자바에서 웹프로젝트까지 열심히 하자!';
+	document.writeln( msg.charAt(3)+ '<br/>');     // '서'
+	document.writeln( msg.slice( 5, 12 )+ '<br/>'); // 5에서 12까지 '웹프로젝트까지 '
+	document.writeln( msg.substring( 5, 12 )+ '<br/>'); //5에서 12까지  '웹프로젝트까지 '
+	document.writeln( msg.substr(5, 7 ) + '<br/>'); // 5, 5+7까지 추출  '웹프로젝트까지 '
+	document.writeln( msg.split(' ')+ '<br/>'); //공백 기준으로 잘림 ''이렇게 하면 한글자씩 짤림
+	                                            //자바에서,웹프로젝트까지,열심히,하자!
+	document.writeln( msg.concat('화이팅')+ '<br/>'); //'자바에서 웹프로젝트까지 열심히 하자!화이팅'
+	document.writeln( msg +  '<hr/>'); //'자바에서 웹프로젝트까지 열심히 하자!'
+	
+	
+	
+	var  text = '♡해yo';  //다 똑같이 갯수 따짐
+	document.writeln( text.length +  '<br/>');		//4 
+	document.writeln( text.repeat(2) +  '<br/>');   //♡해yo♡해yo
+	document.writeln( text.codePointAt(0) +  '<br/>');	// 9825
+	document.writeln( String.fromCodePoint(9825) +  '<br/>'); //♡
+	document.writeln( String.fromCodePoint(128169) +  '<br/>'); //💩
+	
+
+	
+	
+   </script>
+
+
+</head>
+<body>
+
+</body>
+</html>
