@@ -5,13 +5,61 @@
 <title> 폼 예제 2</title>
 </head>
 <script type="text/javascript">
+window.onload = function() {
+	
+	document.getElementById('up').onclick = function (){
+		var idx =frm.play.selectedIndex; //인덱스 뽑기
+		var optSel = frm.play.options;//옵션이 하나여도 *배열*처리
+		                              //옵션 목록 뽑기
+		
+		//서로 순서 바꾸기 (올리기)
+		if(idx >0) {
+		var temp = optSel[idx].text; //임시 저장소에 옵션의 인덱스의 텍스트 뽑아 담기
+		optSel[idx].text = optSel[idx-1].text; // 뽑아담은 인덱스의 텍스트에 전의 인덱스 텍스트 넣기
+		optSel[idx-1].text= temp;  // 전의 인덱스 텍스트를 임시 저장소랑 바꾸기  -> 결과적으로 서로 바꾸게 됨
+		optSel[idx-1].selected= true;  // 선택한 값 그대로 유지
+	   }else { // 써클
+		   var temp = optSel[0].text;
+       	optSel[0].text = optSel[5].text; 
+   		optSel[5].text= temp;
+   		optSel[5].selected= true;
+		   
+	   }
+	}
+    document.getElementById('down').onclick = function (){
+    	var idx =frm.play.selectedIndex; //옵션 인덱스 뽑기
+    	var optSel = frm.play.options;   //옵션 목록 뽑기                          
+	    
+    	//서로 순서 바꾸기 (내리기)
+    	if(idx <5 ) {
+    	var temp = optSel[idx].text;
+    	optSel[idx].text = optSel[idx+1].text; 
+		optSel[idx+1].text= temp;
+		optSel[idx+1].selected= true;
+    	}else {  //써클
+    		var temp = optSel[5].text;
+        	optSel[5].text = optSel[0].text; 
+    		optSel[0].text= temp;
+    		optSel[0].selected= true;
+    		
+    	}
+    	
+    	
+    		
+	}
+	
+}
+
+
+
 </script>
 <body>
 
 내가 제일 좋아하는 놀이 순서대로 한다면 <br>
 
 <form name="frm">
-<select name="play" size="8">
+<select name="play" size="8">  
+<!-- 사이즈 안주면 콤보박스 -->
 	<option selected> 숨쉬기 </option>
 	<option> 밥먹기 </option>
 	<option> 그냥있기 </option>

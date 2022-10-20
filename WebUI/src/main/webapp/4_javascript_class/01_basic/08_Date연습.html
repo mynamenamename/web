@@ -11,8 +11,19 @@
 			 
 			 var sDate = new Date(s);
 			 var eDate = new Date(e);
-
-	
+            
+			 var date = eDate - sDate;
+			 alert(date);
+	           
+			 var date2 = Math.ceil(date/ (1000*60*60*24));
+			             // 1000*60*60*24 일단위
+			             // 1000*60*60 시간단위
+			             // 1000*60 분단위
+			             // 1000 초단위
+			             // 그냥 > 밀리초단위
+			             
+			 alert(date2);
+			 
 		}
 	}
 </script>
@@ -20,7 +31,7 @@
 <body>
 		시작일 : <input type='date'  id='startDate'> 
 		~
-		종요일  : <input type='date' id='endDate'> 
+		종료일  : <input type='date' id='endDate'> 
 		
 		<input type='button' id='btn' value='여행일정'>
 </body>

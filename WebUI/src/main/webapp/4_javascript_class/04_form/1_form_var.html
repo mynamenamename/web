@@ -5,6 +5,27 @@
 <title></title>
 <script type="text/javascript">
 
+     window.onload = function(){
+    
+    //이벤트랑 관련 없고 값 입력 	 
+    myForm.txt0.value = '호호';
+    myForm['txt1'].value = '히히';
+	 
+
+    
+    
+  
+	document.getElementById('btn').onclick= function() {
+		for(var i=0; i<4;i++) {
+			//각각의 텍스트 필드에 data-0 / data-1 ... 입력하려 함
+        myForm['txt'+ i].value = 'data-' + i
+	          } 
+      }	
+	
+	
+	
+     }
+
 </script>
 </head>
 <body>
