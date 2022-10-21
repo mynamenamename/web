@@ -4,9 +4,30 @@
 <meta charset="UTF-8">
 <title> 새로 열려진 창 </title>
 <script type="text/javascript">
-	<!--
+
+/**********************************
+ * 열어준 창의 요소를 찾을 때 
+   열어준 창 : opener **********
+ */
+	
+	
+window.onload = function() {
+	var sel = frm.site;
+	for (var i=0; i<sel.length; i++) {
+		sel[i].onclick = function() {
+			//alert(this.value);
+			switch(this.value) {  // sel.value >> 같음
+			case '0': opener.location.href = 'http://www.daum.net'; break;
+			case '1': opener.location.href = 'http://www.naver.com' ; break;
+			case '2': opener.location.href = 'http://www.nate.com'; break;
 			
-	//-->
+			 //자기 자신 창에서 띄울때는 window.location.href ...
+			}
+		}
+	}
+}
+	
+	
 </script>
 </head>
 <body>

@@ -13,11 +13,13 @@ window.onload = function() {
 			//현재 창의 부속인 iframe 안에 요소는
 			//iframe의 name값으로 찾는다!
 			
-			ifrm.fm.result.value=this.value;
+			//frm.result.value=this.value;
 			
+		opener.fm.result.value=frm.site.value;
 			
 			}
 		}
+	
 	}
 
 
@@ -26,16 +28,15 @@ window.onload = function() {
 <body>
 
 <form name="frm">
-		<input type="radio" name="site"  value='다음'> 다음 <br>
-		<input type="radio" name="site"  value='네이버'> 네이버 <br>
-		<input type="radio" name="site"  value='네이트'> 네이트 <br>
-		결과받기 : <input type='text' name='result' size='20'/>
-		<br/>
-		<br/>
+		결과받기:<input type='text' name='result' size='20'/>  <br>
+		<input type="radio" name="site"  value='가산' onclick='sel()'> 가산 <br>
+		<input type="radio" name="site"  value='판교' onclick='sel()'> 판교 <br>
+		<input type="radio" name="site"  value='부평' onclick='sel()'> 부평 <br>
+		
 </form>
 
-<iframe name='ifrm'	width="420" height="315" src="4_sub.html">
-</iframe>
+
+
 
 </body>
 </html>

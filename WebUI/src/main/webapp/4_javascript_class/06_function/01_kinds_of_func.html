@@ -4,22 +4,49 @@
 	<meta charset="UTF-8">
 	<title>자바스크립트 함수 만들기</title>
 	<script>
-
-	</script>
+    // (1) function 키워드
+    function first() {
+    	var txt = document.querySelector('#first');
+    	txt.style.backgroundColor = 'tomato'
+    	txt.style.color = 'white'
+    }
+   // (2)함수 리터럴
+   var second = function() {
+	  var txt2 = document.querySelector('#second');
+	   txt2.style.backgroundColor = 'lightblue'
+	   txt2.style.color = 'white'
+   };
+   
+   // (3)function 생성자
+    var third = new Function("var txt = document.querySelector('#third'); txt.style.backgroundColor='navy'; txt.style.color='white';");
+	  
+   
+	
+   
+   
+   // (4)애로우 함수
+	let fourth = () => {
+		var txt4 = document.querySelector('#fourth');
+		   txt4.style.backgroundColor = 'green'
+		   txt4.style.color = 'white'
+	};
+   
+   
+    </script>
 </head>
 
 <body>
 	<p> <span id="first"> 1. function 명령 </span>
 		<input type="button" value="확인" onclick="javascript:first()"/>
 	</p>
-	<p> <span id="third"> 2. 함수 리터럴 </span>
+	<p> <span id="second"> 2. 함수 리터럴 </span>
 		<input type="button" value="확인" onclick="javascript:second()"/>
 	</p>
-	<p> <span id="second"> Function 생성자 </span>
+	<p> <span id="third"> 3.Function 생성자 </span>
 		<input type="button" value="확인" onclick="javascript:third()"/>
 	</p>
 
-	<p> <span id="fourth"> 애로우 함수 </span>
+	<p> <span id="fourth"> 4.애로우 함수 </span>
 		<input type="button" value="확인" onclick="javascript:fourth()"/>
 	</p>
 </body>

@@ -14,7 +14,21 @@
 	var progress = document.getElementById("progress");
 	var current = 0;
 
+	  
+	 //  setinterval을 불러서 반복! 알아놓기~*
+	 
+	//setTimeout(updateProgress, 2000);
+	 
+	 
+	/*  밑이랑 같은 코딩 > 읽을줄 알아야함
+	setInterval(updateProgress, 100);
 	
+	function updateProgress(){
+		progress.value = ++current;
+	} */
+	
+	setInterval(function updateProgress(){
+               progress.value = ++current;}, 100);
 	
 	
 

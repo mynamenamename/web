@@ -5,6 +5,74 @@
 	<title>자바스크립트 변수와 범위</title>
 	<script>
 
+	/*var 중심으로 확인 - let 알아서*/       
+	// 1. 글로벌변수와 지역변수
+	/* var scope = '글로벌변수';
+	function getValue() {
+		var scope = '지역변수';
+		return scope;
+	}
+	document.write(getValue()+ '<br/>') //지역변수 
+	document.write(scope + '<br/>')     //글로별변수
+	 */
+	
+	// 2. var를 사용하지 않으면 글로벌변수 취급
+	// ----> 변수 선언시 var/let 꼭 사용하기~~!!!
+/*    	scope = '글로벌변수';
+	function getValue() {
+		scope = '지역변수';
+		test =  '테스트';
+		return scope;
+	}
+	document.write(getValue()+ '<br/>') //지역변수 
+	document.write(scope + '<br/>')     //지역변수
+	document.write(test + '<br/>')      //테스트 */
+	
+	
+	// 3. 지역변수 선언을 함수의 앞단에 
+	var scope = '글로벌변수';
+	function getValue() {
+		
+		var scope = '지역변수';
+		document.write('<0>'+ scope + '<br/>'); 
+		return scope;
+	}
+	document.write(getValue()+ '<br/>') // <0>지역변수 지역변수
+	document.write(scope + '<br/>')     // 글로벌변수
+	 
+	/*
+	  document.write('<0>'+ scope + '<br/>'); 
+	  var scope = '지역변수';
+	  return scope;
+	
+	
+	  <0>undefined
+      지역변수
+      글로벌변수
+	
+	*/
+	
+	// 4. 지역변수 범위
+	//      -var : 함수의 블록 > let보다 조금 더 유연하게 처리 가능
+	//      -let : 블록
+	
+	if(true) {
+		var i = 100;
+		let j = 100;
+	}
+	  
+	document.write('i=' + i + '<br/>');
+  //document.write('j=' + j + '<br/>'); j를 찾지못해서 에러 
+		
+    for(var a=0; a<4; a++) {}           //글로벌변수
+    for(var a=0; a<4; a++) {}
+    document.write('a=' + a + '<br/>') // a= 4 반복문 0 1 2 3 돌고
+	 
+    for(let a=0; a<4; a++) {}           //지역변수 -> let b로 바꾸면 안헷갈림
+    for(let a=0; a<4; a++) {}
+    document.write('a=' + a + '<br/>') // let의 a가 아니고 위의 4가 찍힘    
+    
+    
 	</script>
 </head>
 
