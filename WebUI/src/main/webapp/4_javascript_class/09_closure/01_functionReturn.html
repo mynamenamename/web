@@ -8,6 +8,43 @@
 //  즉시 실행 함수
 //	 - 함수를 변수에 직접 할당하는 것이 아니라 함수의 결과물을 할당하기 위해 즉시 실행 함수를 사용(?)
 //	- 추후에 클로져와 관련
+/* var f = function(num){
+	    document.write('num=' + num + '<br/>');
+	    return num;  // 이거 없으면 밑에 출력 안됨
+        }
+var func = f(10);
+document.write(func + '<hr/>'); */
+
+//즉시 실행 함수 >> 선언하면서 실행
+var func = function(num){
+    document.write('num=' + num + '<br/>');
+    return num;  
+    } (10);
+document.write(func + '<hr/>');
+
+//-----------------------------------------------
+// 함수도 리턴할 수 있다!
+/* var b = function(num){
+	    var fun = function(){
+	    	num--;
+	    	document.write('num=' + num + '<br/>');
+	    };
+	    return fun;
+        }(10);
+document.write(b + '<hr/>');     
+b();
+b(); */
+
+var b = function(num){
+         
+    return  function(){
+    	num--;
+    	document.write('num=' + num + '<br/>');
+    };
+    }(10);
+document.write(b + '<hr/>');     
+b();
+b();
 
 
 

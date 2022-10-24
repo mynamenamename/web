@@ -12,6 +12,27 @@
 //			호출되는 함수가 참조하는 함수의 메모리 공간을 참조한다. (?)
 //			아무튼 클로저를 이용하여 전역변수의 사용을 줄일 수 있다
 
+//------ 함수 선언
+function add(a,b,c){
+ var result = a + b;   //지역 변수 - 이 안에서만 공유
+ c(result);    
+ return function(){
+            result++;
+            return '공유결과?' + result;
+     };  
+}
+		
+//------ 함수 호출
+var resultVar = add(10,20, function(res){
+	                       document.write('결과:' + res + '<br/>')
+                           }); 
+document.write('리턴 결과: '+ resultVar() +'<hr/>');
+document.write('리턴 결과: '+ resultVar() +'<hr/>');
+document.write('리턴 결과: '+ resultVar() +'<hr/>');
+result = 1000000;  //global 변수 - 공유하고 싶을때
+document.write('리턴 결과2: '+ resultVar() +'<hr/>');
+
+ 
 
 </script>
 </head>
