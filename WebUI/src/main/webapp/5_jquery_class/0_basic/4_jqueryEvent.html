@@ -8,6 +8,57 @@
 	.bg { background : yellow; }
 	.border { border : 3px dotted red; }
 </style>
+<script src='../lib/jquery-3.6.1.min.js' type="text/javascript" ></script>
+<script type="text/javascript">
+
+$(function(){
+   
+	//-------------------------------------
+	//$('ul') :  기존의 ul객체(화면에 있는 요소)
+	//$('<ul>') : 새로운 ul객체 만들기 (화면에 안 붙음)
+	
+	$('h1').css({'cursor':'pointer'}); //손가락 표시
+	
+	$('h1').bind('click',function(){
+	 var n = $('<li/>').text(new Date());
+	 $('ul').append(n);
+	});
+	
+	// *********************************************
+	// ** 동적으로 생성된 요소에는 이벤트가 걸ㄹㅣ지 않는다 **
+	
+	$('ul').on('click','li',function(){
+		$('#result').text($(this).text());
+	});
+	
+	// *********************************************
+	
+	
+	
+	
+	$('li').css({'cursor':'pointer'}); //손가락 표시
+	
+	$('li').click (function(){   //축약형
+		$('#result').text($(this).text());
+	});
+	
+	
+	
+	/* 	$('li').bind('click', function(){   
+    var liTxt =	$(this).text(); // jquery
+//	var liTxt = this.innerHTML; // js ~쓸 일이 있음
+	$('#result').text(liTxt);
+	}); */
+	
+	
+	//원래 이벤트 연결 함수 : bind()/ one()    
+	/* $('li').bind('click', function(){   //bind 여러번 one 한번
+		$('#result').text($(this).text());
+	}); */
+})
+
+</script>
+
 
 </head>
 <body>
