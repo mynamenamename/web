@@ -33,7 +33,7 @@ $(document).ready(function(){
        $('#listTable').append(tr); 
    
     //5.삭제하기
-      td5.click(function(){
+    td5.click(function(){
       
       var price2 = $(this).parent().find('td:eq(2)').text();
       a -=price2;
@@ -43,6 +43,17 @@ $(document).ready(function(){
       });
     
       });
+      
+      $('#btn').click(function(evt){
+  
+       var page =  $('#total').val();
+       alert('주문확인' )
+       var winObj = window.open('sub.html','','width=300, height=400');
+   
+      
+      
+      
+    }); 
       
       
    })

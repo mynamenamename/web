@@ -6,6 +6,23 @@
 <script type="text/javascript"   src="http://code.jquery.com/jquery-1.9.0.js"></script>
 <script type="text/javascript"   src="js/jquery.cookie.js"></script>
 <script type="text/javascript">
+//쿠키(cookie) : web client - browser에 사용자 정보를 저장  
+
+$(function(){
+
+	//화면 시작시 쿠키 가져오기
+	var cookie = $.cookie('myemail');
+	$('#txtMail').val(cookie);
+	
+	//송신 버튼이 눌렸을 때 -> 쿠키 저장
+    $('#btnSave').click(function(){
+	$.cookie('myemail',$('#txtMail').val(),{expires:1})// 값 가져오기
+	$('#txtMail').val('')  //공백으로 지정
+})	
+	
+})
+
+
 
 </script>
 </head>
