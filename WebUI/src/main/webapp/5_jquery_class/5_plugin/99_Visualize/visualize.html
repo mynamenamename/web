@@ -3,7 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <title>Visualize</title>
-<script type="text/javascript"  src=""></script>
+<!-- css -->
+<link rel="stylesheet" type="text/css" href="./css/visualize.css">
+<link rel="stylesheet" type="text/css" href="./css/visualize-light.css">
+<!-- jquery lib -->
+<script type="text/javascript"  src="../../lib/jquery-3.6.1.min.js"></script>
+<!-- plug in -->
+<script type="text/javascript" src="js/visualize.jQuery.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$('#data').visualize({type:'bar'});
+	$('#data').visualize({type:'pie'});
+	$('#data').visualize({type:'area'});
+	$('#data').visualize({type:'line'});
+})
+
+</script>
 
 </head>
 <body>

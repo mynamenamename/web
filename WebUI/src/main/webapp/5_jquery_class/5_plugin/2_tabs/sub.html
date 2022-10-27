@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html>
 <head>
-<!--폰트 : "Iropke Batang"-->
-    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css">
 <meta charset="UTF-8">
 <title>주문 확인</title>
 <style type="text/css">
@@ -40,18 +37,31 @@ window.onload = function(){
       $('#total1').val(n);
       //이미지 누를 시 결제 진행된 다는 알림 후 창 닫기
       $('#btnpic').click(function(){
-         alert('총 '+$('#total1').val()+'원 카드결제 진행. 카드를 꽂아주세요.');
-      //창 새로고침
+         var answer;
+         answer=confirm("카드로 결제하시겠습니까? ");
+         if(answer==true){
+             alert('총 '+$('#total1').val()+'원 카드결제 진행. 카드를 꽂아주세요.');
+            //창 새로고침
             opener.location.reload();
-       //부모창 새로고침       
-         window.self.close();
+               //부모창 새로고침       
+               window.self.close();
+         }else{
+            return ;
+         }
+        
       });
       $('#btnpic1').click(function(){
+         var answer;
+         answer=confirm("현금으로 결제하시겠습니까? ");
+         if(answer==true){
          alert('총 '+$('#total1').val()+'원 현금결제 진행. 현금을 넣어주세요.');
          //창 새로고침
             opener.location.reload();      
          //부모창 새로고침
          window.self.close();
+         }else{
+            return;
+         }
       });
 
       //이름이 달린 제목칸에 커서를 올리면 손가락 모양이 나오게

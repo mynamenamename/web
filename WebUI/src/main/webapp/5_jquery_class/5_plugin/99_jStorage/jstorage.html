@@ -10,7 +10,39 @@
   <script type="text/javascript" src="js/jstorage.min.js"></script>
 
   <script type="text/javascript">
-
+  $(function(){
+	    //jstorage에 저장된 값을 얻어서 <<화면에 출력>>
+	    
+	    var q  = $.jStorage.get('name');
+	    var a  = $.jStorage.get('memo');
+	     
+	    $('#name').val(q);
+	    $('#memo').val(a);
+	  
+	  $('#set').click(function(){ //등록이 눌려졌을때
+		  //사용자가 입력한 이름 입력값을 변수 n에 저장
+		 var n = $('#name').val();
+		  //사용자가 입력한 비고 입력값을 변수 m에 저장
+		 var m = $('#memo').val();
+		  
+		  //jstorage에 저장
+		    $.jStorage.set('name', n);
+		    $.jStorage.set('memo', m);
+		    
+	  })
+	       //jstorage 삭제
+	    $('#del').click(function(){
+	    	
+	        $.jStorage.deleteKey('name');
+	        $.jStorage.deleteKey('memo');
+	        location.reload();
+	     })
+	     
+	  })
+  
+  
+  
+  
   </script>
 </head>
 <body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>daterange.html</title>
+<!--  1) CSS -->
+<link rel="stylesheet" type="text/css"
+  href="http://code.jquery.com/ui/1.10.0/themes/ui-lightness/jquery-ui.css" />
+<!--  2)Juqery lib -->
+<script type="text/javascript"  src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script type="text/javascript"   src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<!-- 3) plug in -->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/i18n/jquery-ui-i18n.min.js"></script>
+<!-- 4) 사용자 코드 -->
+<script type="text/javascript">
+
+$(function(){
+	$('#today').text(new Date().toLocaleDateString());
+	
+	$.datepicker.setDefaults($.datepicker.regional['ko']);
+	 
+	$('#fromDate').datepicker({
+		minDate: 0 ,  //앞에꺼 선택 못하게끔
+        onClose: function(selectedDate){
+        	$('#toDate').datepicker("option","minDate",selectedDate)
+        }  //시작날짜가 닫혔을때(선택), 종료일자의 옵션 - 최소일자-선택날짜
+           //시작일자가 종료일자보다 작을 수 있게!!
+	});
+	
+	$('#toDate').datepicker({
+		
+		onClose: function(selDate){
+	      $('#fromDate').datepicker("option","maxDate",selDate)
+	      //ex) 종료일자가 (11월이면) 시작날짜가 (10월로) 갈 수 없게
+		}
+	
+	}); 
+})
+</script>
+
+</head>
+<body>
+
+
+오늘날짜: <span id='today'></span>
+<hr/>
+<hr/>
+
+<form>
+
+<label for='fromDate'>시작일자</label>
+<input id='fromDate' name='fromDate' type='text'>
+~
+<label for='toDate'>종료일자</label>
+<input id='toDate' name='toDate' type='text'>
+</form>
+
+</body>
+</html>

@@ -279,10 +279,10 @@ $.extend($.validator, {
 	},
 
 	messages: {
-		required: "This field is required.",
+		required: "ID는 필수 입력입니다.",
 		remote: "Please fix this field.",
-		email: "Please enter a valid email address.",
-		url: "Please enter a valid URL.",
+		email: "EMAIL 형식에 맞는 EMAIL을 입력해주세요",
+		url: "URL 형식에 맞는 URL을 입력해주세요.",
 		date: "Please enter a valid date.",
 		dateISO: "Please enter a valid date (ISO).",
 		number: "Please enter a valid number.",
